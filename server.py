@@ -6,7 +6,7 @@ import certifi
 import json, copy, bcrypt, random, os
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:5173", "http://127.0.0.1:5173", "https://web.postman.co", "3704-vite.vercel.app", "3704-vite-gpost1s-projects.vercel.app" ])
+CORS(app, origins=["http://localhost:5173", "http://127.0.0.1:5173", "https://web.postman.co", "https://3704-vite.vercel.app", "https://3704-vite-gpost1s-projects.vercel.app" ])
 app.secret_key = b'osn82^2h8228'
 
 load_dotenv()
