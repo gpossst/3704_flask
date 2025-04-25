@@ -31,7 +31,7 @@ def test():
     return "it worked"
 
 @app.route("/login", methods=['POST'])
-def login_request():
+def login():
     logged_in = verify_user()
     ret_str =  jsonify({"message": "Success!"}) if logged_in else jsonify({"message": "Failed!"})
     return ret_str
@@ -41,7 +41,7 @@ def onboarding():
     return create_user()   
 
 @app.route("/dashboard", methods=['POST'])
-def get_dashboard():
+def dashboard():
     user_data = request.json
 
     user = people.find_one({"username": user_data['username']})
@@ -65,7 +65,7 @@ def get_dashboard():
     return jsonify({"data": out})
 
 @app.route("/track", methods=['POST'])
-def track_calories():
+def track():
     calorie_data = request.json
     response = caloriesCollection.insert_one(calorie_data)
     return jsonify({"message": "success"}), 200
